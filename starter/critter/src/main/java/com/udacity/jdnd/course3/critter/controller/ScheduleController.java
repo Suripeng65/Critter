@@ -80,14 +80,12 @@ public class ScheduleController {
 
     @GetMapping("/customer/{customerId}")
     public List<ScheduleDTO> getScheduleForCustomer(@PathVariable long customerId) {
-        List<Schedule> scheduleList = scheduleService.getScheduleByCustomerId(customerId);
+        List<Schedule> scheduleList = scheduleService.getSchedulesForCustomer(customerId);
         List<ScheduleDTO> results = new ArrayList<>();
-
-        if(scheduleList.size() != 0){
-            for(Schedule s : scheduleList){
-                results.add(scheduleToDTO(s));
-            }
-        }
+        
+	    for(Schedule s : scheduleList){
+	        results.add(scheduleToDTO(s));
+	    }
         return results;
     }
     

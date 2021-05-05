@@ -15,9 +15,8 @@ import org.hibernate.annotations.Nationalized;
 import com.udacity.jdnd.course3.critter.entities.PetType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Pet {
-	  @Id
+	  	@Id
 	    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	    private long id;
 

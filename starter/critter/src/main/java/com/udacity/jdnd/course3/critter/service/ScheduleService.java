@@ -8,7 +8,7 @@ public interface ScheduleService {
 	Schedule saveSchedule(Schedule schedule);
 	List<Schedule> getScheduleByPetId(long petId);
 	List<Schedule> getScheduleByEmployeeId(long employeeId);
-	List<Schedule> getScheduleByCustomerId(long customerId);
+//	List<Schedule> getScheduleByCustomerId(long customerId);
 	List<Schedule> getAllSchedules();
-	
+	List<Schedule> getSchedulesForCustomer(long customerId);
 }
