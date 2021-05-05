@@ -24,14 +24,13 @@ public class Pet {
 	    @Enumerated(EnumType.STRING)
 	    private PetType type;
 
-	    @Nationalized
 	    private String name;
 
 	    @ManyToOne(fetch = FetchType.LAZY)
+	    @JoinColumn(name = "owner_id")
 	    private Customer owner;
 	    private LocalDate birthDate;
 
-	    @Nationalized
 	    private String notes;
 
 	    public long getId() {

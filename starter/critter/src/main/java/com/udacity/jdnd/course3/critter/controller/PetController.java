@@ -31,8 +31,7 @@ public class PetController {
     public PetDTO savePet(@RequestBody PetDTO petDTO) {
 		Pet pet = petDtoToPet(petDTO);
 		Customer owner;
-		System.out.println("hit pet post controller");
-		System.out.println(pet);
+
         if((Long) petDTO.getOwnerId() != 0) {
             owner = customerService.getCustomer(petDTO.getOwnerId());
             pet.setOwner(owner);

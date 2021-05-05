@@ -57,11 +57,9 @@ public class UserController {
 
     @GetMapping("/customer/pet/{petId}")
     public CustomerDTO getOwnerByPet(@PathVariable long petId){
-    	//TODO!! if this implementation is correct or not
-    	
         Pet pet = petService.getPet(petId);
+
         Customer customer = pet.getOwner();
-//        Customer customer = customerService.getCustomerByPetId(petId);
         return customerToDTO(customer);
     }
 
@@ -71,7 +69,7 @@ public class UserController {
     	return employeeToDTO(employee);
     }
 
-    @PostMapping("/employee/{employeeId}")
+    @GetMapping("/employee/{employeeId}")
     public EmployeeDTO getEmployee(@PathVariable long employeeId) {
     	return employeeToDTO(employeeService.getEmployee(employeeId)); 	
     }

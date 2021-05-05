@@ -18,13 +18,10 @@ public class Customer {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private  long id;
 
-	    @Nationalized
 	    private String name;
 
-	    @Nationalized //some phone number may need to include their country/state code using () or +
 	    private String phoneNumber;
 
-	    @Nationalized
 	    private String notes;
 
 	    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
