@@ -30,12 +30,12 @@ public class ScheduleServiceImpl implements ScheduleService{
 
 	@Override
 	public List<Schedule> getScheduleByPetId(long petId) {
-		return scheduleRepository.findAllByPetsId(petId);
+		return scheduleRepository.findAllByPets_Id(petId);
 	}
 
 	@Override
 	public List<Schedule> getScheduleByEmployeeId(long employeeId) {
-		return scheduleRepository.findAllByEmployeesId(employeeId);
+		return scheduleRepository.findAllByEmployees_Id(employeeId);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class ScheduleServiceImpl implements ScheduleService{
 		List<Pet> pets = Objects.requireNonNull(customer).getPets();
 		ArrayList<Schedule> schedules = new ArrayList<>();
 		for (Pet pet : pets) {
-            schedules.addAll(scheduleRepository.findAllByPetsId(pet.getId()));
+            schedules.addAll(scheduleRepository.findAllByPets_Id(pet.getId()));
         }
 		return schedules;
 	}

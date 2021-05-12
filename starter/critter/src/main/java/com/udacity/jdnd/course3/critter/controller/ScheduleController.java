@@ -94,8 +94,8 @@ public class ScheduleController {
         ScheduleDTO scheduleDTO = new ScheduleDTO();
         BeanUtils.copyProperties(schedule, scheduleDTO);
 
-        List<Pet> petList = petService.getAllPets();
-        List<Employee> employeeList = employeeService.getAllEmployees();
+        List<Pet> petList = schedule.getPets();
+        List<Employee> employeeList = schedule.getEmployees();
 
         List<Long> petIds = new ArrayList<>();
         if(petList.size() != 0){
